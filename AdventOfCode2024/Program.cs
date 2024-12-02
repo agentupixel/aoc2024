@@ -4,7 +4,8 @@ using AdventOfCode2024;
 Console.WriteLine("Hello, World!");
 var days = new IAdventDay[]
 {
-    new AdventDay()
+    new AdventDay1(),
+    new AdventDay2()
 };
 
 var date = DateTime.Today;

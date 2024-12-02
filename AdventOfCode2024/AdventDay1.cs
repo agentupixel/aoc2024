@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2024;
 
-internal class AdventDay : IAdventDay
+internal class AdventDay1 : IAdventDay
 {
     public async Task<object> ExecuteTask1()
     {
