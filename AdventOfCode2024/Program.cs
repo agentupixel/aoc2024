@@ -5,7 +5,8 @@ Console.WriteLine("Hello, World!");
 var days = new IAdventDay[]
 {
     new AdventDay1(),
-    new AdventDay2()
+    new AdventDay2(),
+    new AdventDay3(),
 };
 
 var date = DateTime.Today;
