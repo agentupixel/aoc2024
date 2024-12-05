@@ -4,7 +4,7 @@
     {
         public async Task<object> ExecuteTask1()
         {
-            await GetInput(out List<Tuple<int, int>> pages, out List<List<int>> results);
+            (List<Tuple<int, int>> pages, List<List<int>> results) = await GetInput();
 
             var counter = 0;
             List<int> middleNumbers = [];
@@ -33,7 +33,7 @@
 
         public async Task<object> ExecuteTask2()
         {
-            await GetInput(out List<Tuple<int, int>> pages, out List<List<int>> results);
+            (List<Tuple<int, int>> pages, List<List<int>> results) = await GetInput();
 
             var counter = 0;
             List<List<int>> brokenResults = [];
@@ -87,23 +87,25 @@
             return fixedNumbers.Sum();
         }
 
-        private static async Task GetInput(out List<Tuple<int, int>> pages, out List<List<int>> results)
+        private static async Task<(List<Tuple<int, int>> pages, List<List<int>> results)> GetInput()
         {
             string[] rawInput = await File.ReadAllLinesAsync("C:\\repos\\days\\day5.txt");
             var indexOfSplit = Array.IndexOf(rawInput, string.Empty);
-            pages = [];
+            List<Tuple<int, int>> pages = [];
             for (int i = 0; i < indexOfSplit; i++)
             {
                 var split = rawInput[i].Split('|');
                 pages.Add(new Tuple<int, int>(int.Parse(split[0]), int.Parse(split[1])));
             }
 
-            results = [];
+            List<List<int>> results = [];
             for (int i = indexOfSplit + 1; i < rawInput.Length; i++)
             {
                 var split = rawInput[i].Split(',');
                 results.Add(split.Select(int.Parse).ToList());
             }
+
+            return (pages, results);
         }
     }
 }
