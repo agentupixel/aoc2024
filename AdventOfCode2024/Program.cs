@@ -9,7 +9,8 @@ var days = new IAdventDay[]
     new AdventDay3(),
     new AdventDay4(),
     new AdventDay5(),
-    new AdventDay6()
+    new AdventDay6(),
+    new AdventDay7(),
 };
 
 var date = DateTime.Today;
