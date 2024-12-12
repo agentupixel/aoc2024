@@ -15,10 +15,11 @@ var days = new IAdventDay[]
     new AdventDay9(),
     new AdventDay10(),
     new AdventDay11(),
+    new AdventDay12(),
 };
 
 var date = DateTime.Today;
-var day = date.Day - 2;
+var day = date.Day - 1;
 var currentAdventDay = days[day];
 var result1 = await currentAdventDay.ExecuteTask1();
 Console.WriteLine(result1);
