@@ -21,7 +21,7 @@ var days = new IAdventDay[]
 };
 
 var date = DateTime.Today;
-var day = date.Day - 1;
+var day = date.Day - 2;
 var currentAdventDay = days[day];
 var result1 = await currentAdventDay.ExecuteTask1();
 Console.WriteLine(result1);
